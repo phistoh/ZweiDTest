@@ -36,6 +36,7 @@ public class PlayerScript : MonoBehaviour
 			if (weapon != null)
 			{
 				weapon.Attack(false);
+				SoundEffectsHelper.Instance.MakePlayerShotSound();
 			}
 		}
 		
@@ -89,5 +90,11 @@ public class PlayerScript : MonoBehaviour
 			HealthScript playerHealth = this.GetComponent<HealthScript>();
 			if (playerHealth != null) playerHealth.Damage(1);
 		}
+	}
+	
+	void OnDestroy()
+	{
+		var gameOver = FindObjectOfType<GameOverScript>();
+		gameOver.ShowButtons();
 	}
 }
