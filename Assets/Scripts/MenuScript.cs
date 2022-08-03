@@ -11,6 +11,11 @@ public class MenuScript : MonoBehaviour
 		SceneManager.LoadScene("Stage1");
 	}
 	
+	public void ExitGame()
+	{
+		Application.Quit();
+	}
+	
     // Start is called before the first frame update
     void Start()
     {
